@@ -22,17 +22,17 @@ const OptionSection = () => {
   const buttonBackgroundColor = selectedImages.length > 0 ? "#FF4444" : "gray";
 
   const handleContinueClick = () => {
-    if (selectedImages.includes("safty")) {
-      navigate("/create-card");
-    } else if (selectedImages.includes("toptree")) {
-      navigate("/create-taptree");
-    } else if (selectedImages.includes("safty") && selectedImages.includes("toptree")) {
-      navigate("/create-card");
+    // getting length if it is 2 both are selected | setting a search parameter with path change
+    if (selectedImages.length === 2) {
+      navigate("/create-card?true");
+    } else {
+      if (selectedImages.includes("safty")) {
+        navigate("/create-card");
+      } else if (selectedImages.includes("toptree")) {
+        navigate("/create-taptree");
+      }
     }
   };
-
-  
-  
 
   return (
     <div className="bg-black min-h-screen p-6 flex flex-col justify-between">

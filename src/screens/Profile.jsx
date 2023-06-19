@@ -8,14 +8,19 @@ import {
   GradientButtonSlideLeft,
   GradientButtton,
 } from "../components/atoms/Button/MyButton";
+import { useNavigate} from "react-router-dom";
 
 const Profile = () => {
-  const handleSuccess = () => {
-    console.log("Button successfully unlocked!");
-  };
+  const navigate = useNavigate();
+ 
 
-  const handleFailure = () => {
-    console.log("Button not fully unlocked!");
+
+  const handleFinishClick = () => {
+    
+        navigate("/profile-all-link");
+    
+     
+ 
   };
   return (
     <>
@@ -37,7 +42,7 @@ const Profile = () => {
           </div>
 
           <div
-            className="flex flex-col shadow-md rounded-xl w-[320px] m-auto z-50 dark:text-gray-100"
+            className="flex flex-col shadow-md rounded-xl sm:w-[330px] w-[320px] m-auto z-50 "
             style={{
               backgroundImage: `url(${backgroundImage2})`,
               backgroundSize: "cover",
@@ -122,18 +127,11 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="mt-[550px]">
-          <GradientButtton text="Slide for TapTree" />
+        <div className="mt-[580px]">
+          <GradientButtton text="Slide for TapTree" onClick={handleFinishClick}/>
         </div>
       </div>
-      {/* <div className="mt-10 relative bottom-14 z-0" style={{marginTop:"-40px"}}>
-      <GradientButtonSlideLeft
-        text="Slide to Unlock"
-        onSuccess={handleSuccess}
-        onFailure={handleFailure}
-        
-      />
-    </div> */}
+      
     </>
   );
 };

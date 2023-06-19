@@ -4,8 +4,12 @@ import MyButton, {
   LoginButton,
 } from "../components/atoms/Button/MyButton";
 import BorderOr from "../components/atoms/lines/BorderOr";
+import arrow from "../assets/icon/arrow.svg";
+import { useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const handleCreateAccount = () => {
     // Logic for creating a new account
   };
@@ -37,8 +41,8 @@ const LoginForm = () => {
                   required=""
                 />
               </div>
-              <LoginButton text="continious" />
-              <BorderOr />
+              <LoginButton text="Continue" src={arrow} bg="#FF4444" onClick={() => {navigate("/otp")}} />
+              <BorderOr text="or" />
               <GoogleButton />
             </form>
           </div>

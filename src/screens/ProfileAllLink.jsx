@@ -5,6 +5,8 @@ import { ProfileLinkBox } from "../components/atoms/link/ProfileLinkBox";
 import { GradientButtton, GradientButttonSlideLeft } from "../components/atoms/Button/MyButton";
 
 const ProfileAllLink = () => {
+ 
+
   return (
     <div className="bg-gradient-to-r from-primary to-secondary bg-[#181818] h-screen">
       <div className="flex flex-col items-center justify-center h-screen">

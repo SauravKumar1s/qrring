@@ -27,7 +27,11 @@ const CreateCard = () => {
 
   const handleFinishClick = () => {
     if (isFormValid) {
-      navigate("/profile");
+      if (location.search) {
+        navigate("/create-taptree");
+      } else {
+        navigate("/profile");
+      }
     }
   };
 

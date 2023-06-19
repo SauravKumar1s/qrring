@@ -41,10 +41,10 @@ export const GoogleButton = ({ onClick, text }) => {
   );
 };
 
-export const GradientButtton = ({ text }) => {
+export const GradientButtton = ({ text , onClick }) => {
   return (
     <div>
-      <button className=" bg-gradient-to-r from-purple-700 via-purple-500 to-red-500 bg-opacity-55 hover:bg-opacity-75 text-white font-bold py-4 px-24 rounded-full">
+      <button className=" bg-gradient-to-r from-purple-700 via-purple-500 to-red-500 bg-opacity-55 hover:bg-opacity-75 text-white font-bold py-4 px-24 rounded-full" onClick={onClick}>
         {text}
       </button>
     </div>
