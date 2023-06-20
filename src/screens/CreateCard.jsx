@@ -8,12 +8,14 @@ import BorderOr from "../components/atoms/lines/BorderOr";
 import right from "../assets/icon/right.svg";
 import arrow from "../assets/icon/arrow.svg";
 import { useNavigate } from "react-router-dom";
+import SuccessPopup from "../components/atoms/popup/SuccessPopup";
 
 const CreateCard = () => {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState(null);
   const [email, setEmail] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
@@ -24,16 +26,30 @@ const CreateCard = () => {
     setEmail(value);
     setIsFormValid(value !== "");
   };
+  // const handleFinishClick = () => {
+  //   if (isFormValid) {
+  //     if (location.search) {
+  //       navigate("/create-taptree");
+  //     } else {
+  //       navigate("/profile");
+  //     }
+  //     setShowPopup(true); // Show the popup
+  //   }
+  // };
+  
 
   const handleFinishClick = () => {
     if (isFormValid) {
       if (location.search) {
         navigate("/create-taptree");
       } else {
-        navigate("/profile");
+        navigate("/success-safty");
       }
+      setShowPopup(true); // Show the popup
     }
   };
+  
+  
 
   return (
     <>
@@ -120,6 +136,7 @@ const CreateCard = () => {
             onClick={handleFinishClick}
           />
         </div>
+        {showPopup && <SuccessPopup onClose={() => setShowPopup(false)}/>}
       </div>
     </>
   );

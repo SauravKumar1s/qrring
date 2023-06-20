@@ -1,13 +1,19 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import Input from "../components/atoms/Input/Input";
 import { LoginButton } from "../components/atoms/Button/MyButton";
 import { HeaderText } from "../components/atoms/head/HeaderText";
 import camera from "../assets/icon/camera.png";
 import BorderOr from "../components/atoms/lines/BorderOr";
 import correct from "../assets/icon/correct.svg";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import arrow from "../assets/icon/arrow.svg";
-
+import insta from "../assets/icon/insta.svg";
+import facebook from "../assets/icon/facebook.svg";
+import twitter from "../assets/icon/twitter.svg";
+import pin from "../assets/icon/pinterest.svg";
+import portfolio from "../assets/icon/portfolio.png";
+import snap from "../assets/icon/snapchat.svg";
+import name from "../assets/icon/name.png";
 
 const CreateTapTree = () => {
   const navigate = useNavigate();
@@ -16,19 +22,21 @@ const CreateTapTree = () => {
 
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleEmailChange = (e) => {
+  const handleChange = (e) => {
     const value = e.target.value;
     setEmail(value);
     setIsFormValid(value !== "");
   };
+
   const handleFinishClick = () => {
-    if (isFormValid) {
+    if (isFormValid ) {
       if (location.search) {
-        navigate("/create-taptree");
-      } else {
-        navigate("/profile");
+        navigate("/success?true");
       }
-     
+      
+      else {
+        navigate("/success-taptree");
+      }
     }
   };
   return (
@@ -48,11 +56,16 @@ const CreateTapTree = () => {
 
       <div className="relative bottom-32  p-6 h-screen flex flex-col justify-end">
         <div className="flex justify-between flex-col gap-6 pt-24">
-          <Input placeholder="name@flowbite.com" padding="4" onChange={handleEmailChange}/>
-          <BorderOr text="" textColor="#757575" />
+          <Input
+            placeholder="Enter The Name"
+            padding="4"
+            onChange={handleChange}
+            src={name}
+          />
+          <BorderOr text="Choose only 4 option" textColor="white" />
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={insta} />
             </div>
             <div>
               <img src={correct} alt="right" />
@@ -61,7 +74,7 @@ const CreateTapTree = () => {
 
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={facebook} />
             </div>
             <div>
               <img src={correct} alt="right" />
@@ -70,7 +83,7 @@ const CreateTapTree = () => {
 
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={snap} />
             </div>
             <div>
               <img src={correct} alt="right" />
@@ -79,7 +92,7 @@ const CreateTapTree = () => {
 
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={twitter} />
             </div>
             <div>
               <img src={correct} alt="right" />
@@ -88,7 +101,7 @@ const CreateTapTree = () => {
 
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={pin} />
             </div>
             <div>
               <img src={correct} alt="right" />
@@ -97,7 +110,7 @@ const CreateTapTree = () => {
 
           <div className="flex justify-center items-center gap-2">
             <div className="w-full">
-              <Input placeholder="another@example.com" padding="2" />
+              <Input placeholder="Enter the link" padding="2" src={portfolio} />
             </div>
             <div>
               <img src={correct} alt="right" />

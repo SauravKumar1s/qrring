@@ -1,9 +1,9 @@
 import React from "react";
 
-export const HeaderText = ({ text }) => {
+export const HeaderText = ({ text , color}) => {
   return (
     <div className="font-semibold text-3xl">
-      <p className="text-white ">{text}</p>
+      <p style={{color:color}} className="text-white ">{text}</p>
     </div>
   );
 };

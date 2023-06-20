@@ -7,6 +7,9 @@ import CreateCard from "./screens/CreateCard";
 import Profile from "./screens/Profile";
 import CreateTapTree from "./screens/CreateTapTree";
 import ProfileAllLink from "./screens/ProfileAllLink";
+import SuccessPopup from "./components/atoms/popup/SuccessPopup";
+import SuccessPopupSafty from "./components/atoms/popup/SuccessPopupSafty";
+import SuccessPopupTapTree from "./components/atoms/popup/SuccessPopupTapTree";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/create-taptree" element={<CreateTapTree />} />
         <Route path="/profile-all-link" element={<ProfileAllLink />} />
+        <Route path="/success" element={<SuccessPopup />} />
+        <Route path="/success-safty" element={<SuccessPopupSafty />} />
+        <Route path="/success-taptree" element={<SuccessPopupTapTree />} />
       </Routes>
     </BrowserRouter>
   );

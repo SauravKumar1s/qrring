@@ -8,19 +8,13 @@ import {
   GradientButtonSlideLeft,
   GradientButtton,
 } from "../components/atoms/Button/MyButton";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const navigate = useNavigate();
- 
-
 
   const handleFinishClick = () => {
-    
-        navigate("/profile-all-link");
-    
-     
- 
+    navigate("/profile-all-link");
   };
   return (
     <>
@@ -128,10 +122,12 @@ const Profile = () => {
           </div>
         </div>
         <div className="mt-[580px]">
-          <GradientButtton text="Slide for TapTree" onClick={handleFinishClick}/>
+          <GradientButtton
+            text="Slide for TapTree"
+            onClick={handleFinishClick}
+          />
         </div>
       </div>
-      
     </>
   );
 };

@@ -22,7 +22,6 @@ const OptionSection = () => {
   const buttonBackgroundColor = selectedImages.length > 0 ? "#FF4444" : "gray";
 
   const handleContinueClick = () => {
-    // getting length if it is 2 both are selected | setting a search parameter with path change
     if (selectedImages.length === 2) {
       navigate("/create-card?true");
     } else {
@@ -33,7 +32,7 @@ const OptionSection = () => {
       }
     }
   };
-
+  
   return (
     <div className="bg-black min-h-screen p-6 flex flex-col justify-between">
       <div className="flex flex-col justify-between">
