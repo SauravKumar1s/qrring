@@ -17,12 +17,13 @@ export const MyButton = ({ onClick, text, src, alt }) => {
   );
 };
 
-export const LoginButton = ({ onClick, text, src, alt, bg }) => {
+export const LoginButton = ({ onClick, text, src, alt, bg , onclose }) => {
   return (
     <button
       className="flex flex-row items-center text-xl justify-center text-center w-full border rounded-xl outline-none py-5 border-none text-white shadow-sm gap-2"
       style={{ backgroundColor: bg, borderRadius: "44px" }}
       onClick={onClick}
+      onClose={onclose}
     >
       {text} <img src={src} alt={alt} />
     </button>
@@ -140,8 +141,7 @@ export const GradientButtonSlideLeft = ({ text, onFailure }) => {
   const onSuccess = () => {
     container.current.style.width = `${container.current.clientWidth}px`;
     setUnlocked(true);
-    // Navigate to another component after sliding
-    // Add the desired route path for navigation
+  
     window.location.href = "/your-route-path";
   };
 

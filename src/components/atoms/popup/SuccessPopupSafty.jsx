@@ -1,24 +1,42 @@
-import React from 'react'
-import { LoginButton } from '../Button/MyButton'
+import React, { useState } from "react";
 import Right from "../icons/Right";
-import { HeaderText } from '../head/HeaderText';
+import { LoginButton } from "../Button/MyButton";
+import { HeaderText } from "../head/HeaderText";
+import { useNavigate } from "react-router-dom";
 
-const SuccessPopupSafty = () => {
+const SuccessPopupSafty = ({ onClose }) => {
+  const navigate = useNavigate();
+
+
   return (
+    
     <div className=" flex flex-col  justify-center h-screen">
-    <div className="bg-white p-6">
-      <Right />
-      <div className="text-center">
-        <HeaderText color="green"  text="successfully created"/>
-        <p className="text-gray-600 my-9">
-          Thank you for safty
+      <div className="bg-white p-6">
+        <div className="text-center">
+          <HeaderText color="green" text="successfully created" />
 
-        </p>
-        <LoginButton bg="#FF4444" text="hello" />
+          <Right />
+          <p className="text-gray-600 my-9 text-xl">Do you Create Tap Tree?</p>
+          <div className="flex justify-center items-center ">
+            <div className="flex gap-4">
+              <button
+                className=" bg-[#FF4444] text-white font-bold py-2 px-4 rounded"
+                onClick={() => navigate("/create-taptree")}
+              >
+                Yes
+              </button>
+              <button
+                className=" bg-[#FF4444] text-white font-bold py-2 px-4 rounded"
+                onClick={() => navigate("/scan-ring")}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default SuccessPopupSafty
+export default SuccessPopupSafty;

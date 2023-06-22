@@ -17,3 +17,11 @@ export const HeaderTextOption = () => {
     </div>
   );
 };
+
+export const HeaderTextCreateCardAndTapTree = ({ text , color}) => {
+  return (
+    <div className="font-semibold text-2xl">
+      <p style={{color:color}} className="text-white ">{text}</p>
+    </div>
+  );
+};

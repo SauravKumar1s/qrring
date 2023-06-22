@@ -10,9 +10,10 @@ import ProfileAllLink from "./screens/ProfileAllLink";
 import SuccessPopup from "./components/atoms/popup/SuccessPopup";
 import SuccessPopupSafty from "./components/atoms/popup/SuccessPopupSafty";
 import SuccessPopupTapTree from "./components/atoms/popup/SuccessPopupTapTree";
+import ScanTheRing from "./screens/ScanTheRing";
 
 function App() {
-  return (
+  return (<div className=" ">
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<LoginForm />} />
@@ -25,8 +26,9 @@ function App() {
         <Route path="/success" element={<SuccessPopup />} />
         <Route path="/success-safty" element={<SuccessPopupSafty />} />
         <Route path="/success-taptree" element={<SuccessPopupTapTree />} />
+        <Route path="/scan-ring" element={<ScanTheRing/>} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter></div>
   );
 }
 

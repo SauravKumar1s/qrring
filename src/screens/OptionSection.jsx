@@ -34,45 +34,30 @@ const OptionSection = () => {
   };
   
   return (
-    <div className="bg-black min-h-screen p-6 flex flex-col justify-between">
-      <div className="flex flex-col justify-between">
-        <HeaderTextOption />
-        <div className="flex flex-col justify-center items-center">
-          <div
-            className={`cursor-pointer mt-8 mb-4 ${
-              selectedImages.includes("safty") ? "glow-on-hover" : ""
-            }`}
-          >
-            <img
-              src={saftyImage}
-              alt="safty"
-              onClick={() => handleImageClick("safty")}
-            />
-          </div>
-          <div
-            className={`cursor-pointer ${
-              selectedImages.includes("toptree") ? "glow-on-hover2" : ""
-            }`}
-          >
-            <img
-              src={toptreeImage}
-              alt="toptree"
-              onClick={() => handleImageClick("toptree")}
-            />
-          </div>
-        </div>
+    <div className="bg-black p-6 flex flex-col justify-between" style={{ height: "100vh", width: "100vw" }}>
+  <div className="flex flex-col justify-between" style={{ height: "calc(100% - 48px)" }}>
+    <HeaderTextOption />
+    <div className="flex flex-col justify-center items-center" style={{ height: "calc(100% - 56px)" }}>
+      <div className={`cursor-pointer mt-8 mb-4 ${selectedImages.includes("safty") ? "glow-on-hover" : ""}`}>
+        <img src={saftyImage} alt="safty" onClick={() => handleImageClick("safty")} />
       </div>
-      <div></div>
-      <div>
-        <LoginButton
-          text="Continue"
-          disabled={isContinueButtonDisabled}
-          bg={buttonBackgroundColor}
-          onClick={handleContinueClick}
-          src={arrow}
-        />
+      <div className={`cursor-pointer ${selectedImages.includes("toptree") ? "glow-on-hover2" : ""}`}>
+        <img src={toptreeImage} alt="toptree" onClick={() => handleImageClick("toptree")} />
       </div>
     </div>
+  </div>
+  <div></div>
+  <div>
+    <LoginButton
+      text="Continue"
+      disabled={isContinueButtonDisabled}
+      bg={buttonBackgroundColor}
+      onClick={handleContinueClick}
+      src={arrow}
+    />
+  </div>
+</div>
+
   );
 };
 
